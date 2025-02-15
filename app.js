@@ -16,7 +16,7 @@ app.use(cookieParser());
 
 // Update CORS configuration to allow requests from the frontend's origin
 app.use(cors({
-  origin: '*',
+  origin: process.env.CORS,
   credentials: true,
 }));
 

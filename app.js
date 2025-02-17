@@ -18,7 +18,7 @@ app.use(cookieParser());
 // Configure CORS to allow all methods and dynamic origin
 app.use(
   cors({
-    origin: process.env.CORS || 'http://localhost:5173',
+    origin: process.env.CORS || 'https://quizmaster-seven.vercel.app',
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   })

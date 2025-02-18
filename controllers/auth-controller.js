@@ -218,6 +218,7 @@ const login = AsyncHandler(async (req, res) => {
     const user = await User.findOne({ Email });
 
     if (!user) {
+      console.log("User not found");
       return res.status(404).json(new ApiResponse(404, null, "User not found"));
     }
 
@@ -225,7 +226,7 @@ const login = AsyncHandler(async (req, res) => {
     if (!isPasswordMatch) {
         return res
             .status(401)
-            .json(new ApiResponse(401, "Invalid user credentials"));
+            .json(new ApiResponse(401,null, "Invalid user credentials"));
     }
     const { accessToken, refreshToken } = await generateTokens(user._id);
 
